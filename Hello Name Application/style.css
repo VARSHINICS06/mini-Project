@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(241, 222, 203);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.continer{
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+
+}
+span{
+    color: red;
+}
+button{
+    background-color: hotpink;
+    color: #fff;
+    border-radius: 3px;
+    border: 2px solid ;
+    padding: 5px;
+    margin: 3px;
+    box-shadow:0px 0px 2px 3px rgb(155, 125, 95,0.6);
+    transform: rgb(100, 100, 15);
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(157, 212, 212);
+    color: rgb(20, 30, 40);
+}
