@@ -1,68 +1,19 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    color: #fff;
-}
-body{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+body {
+    margin: 0;
     height: 100vh;
-    background-color: #212121;
-
-}
-.container{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.1);
-    border: 2px solid rgba(255,255,255,0.25);
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.9);
-}
-.clock{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.clock span{
-    position: absolute;
-    transform: rotate(calc(30deg*var(--i)));
-    inset: 5px;
-    text-align: center;
-}
-.clock span b{
-    transform: rotate(calc(-30deg*var(--i)));
-    display: inline-block;
-
-}
-.clock::before{
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #fff;
-    z-index: 2;
-}
-.hand{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items:flex-end ;
-}
-.hand i{
-    position: absolute;
-    background-color: #fff;
-    width: 4px;
-    height: var(--h);
-    border-radius: 8px;
-}
-#hour{
-    background-color: red;
-}
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .clock {
+    color: #00fff7;
+    font-size: 80px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #00fff7;
+    text-shadow: 0 0 20px #00fff7;
+  }
