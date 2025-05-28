@@ -8,7 +8,7 @@ const startBtn = document.querySelector('.startBtn');
 const timer = document.querySelector('.timer');
 
 
-// Make an array of objects that stores question, choices of question and answer
+
 const quiz = [
     {
         question: "Q. Which of the following is not a CSS box model property?",
