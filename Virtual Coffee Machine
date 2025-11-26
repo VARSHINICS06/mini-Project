@@ -1,0 +1,102 @@
+# menu dic that contain coffee type they required ingredients and cost
+menu={
+    "latte":{
+        "ingredients":{
+            "water":200,
+            "milk":150,
+            "coffee":24
+        },
+        "cost":150
+     },
+    "espresso":{
+        "ingredients":{
+            "water":50,
+            "coffee":18
+        },
+        "cost":100
+
+    },
+    "cappuccino":{
+        "ingredients":{
+            "water":250,
+            "milk":100,
+            "coffee":29
+        },  
+        "cost":200
+
+    }
+}
+
+profit=0
+# variable to store total profit
+
+resoures={
+    "water":800,
+    "milk":500,
+    "coffee":100
+}
+# check resoures
+def check_resoures(order_ingerdents):
+    for item in order_ingerdents:# loop though each ingerdent 
+        if order_ingerdents[item]>resoures.get(item):
+            print(f"Sorry, there is not enough {item}")
+            return False
+    return True #return true all ingerdents are avilable
+def process_coins():
+    print("Plese insert coins")
+    five=int(input("How  5Rs coin: "))
+    ten=int(input("How  10Rs coin: "))
+    twenty=int(input("How  20Rs coin: "))
+
+    total=0
+    total=(five * 5)+(ten * 10)+(twenty * 20)
+    return total
+# to check payment
+def is_payment_successful(money_received,coffee_cost):
+    if money_received>=coffee_cost:
+        global profit
+        profit+=coffee_cost
+        change=money_received-coffee_cost
+        print("take your change",change)
+        return True
+    else:
+        print("Sorry thats not enough money. Money refunded.",money_received)
+# deduct ingerdent from resources
+def make_coffee(coffee_name,cofee_ingerdents):
+    for item in cofee_ingerdents:
+        resoures[item]-=cofee_ingerdents[item]
+    print(f" here is your {coffee_name} coffe,☕ ... Enjoy!")
+is_on=True
+while is_on:#main loop to keep asking the user for input until turned off
+    choice=input("What would you like? (espresso/latte/cappuccino/off): ").lower()
+    if choice=="off":
+        is_on=False
+        print("why did you off machine ,idiot")
+    elif choice=="report":
+        print(f"remaining water: {resoures['water']} ml")
+        print(f"remaining milk: {resoures['milk']} ml")
+        print(f"remaining coffee: {resoures['coffee']} g")
+        print(f"total profit: {profit} Rs")
+    elif choice  in menu :#if user select correct input
+        coffee_type= menu[choice]
+        # step 1:check enough ingerdents are available
+        if check_resoures(coffee_type['ingredients']):
+        # step 2: ask user to insert coins
+            payment=process_coins()
+        # step3: check payment is sufficient
+            if is_payment_successful(payment,coffee_type['cost']):
+        #step4: make the coffee and diduct ingerdentes
+                make_coffee(choice,coffee_type['ingredients'])
+    else:#print invaled choice
+        print("invalid choice")
+
+
+
+
+
+
+
+
+
+
+
